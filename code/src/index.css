@@ -1,0 +1,357 @@
+/* =========================================
+   🌙 SUPER ADVANCED UI THEME (PREMIUM)
+   Glassmorphism + Neon Purple + Smooth UI
+   ========================================= */
+
+/* GLOBAL COLORS */
+:root {
+  --bg-dark: #0b0f19;
+  --glass: rgba(255, 255, 255, 0.06);
+  --glass-light: rgba(255, 255, 255, 0.12);
+  --glass-border: rgba(255, 255, 255, 0.18);
+
+  --text-light: #e6ecf5;
+  --text-muted: #a8b0c0;
+
+  --accent: #8c4bff;
+  --accent-glow: 0 0 12px rgba(140, 75, 255, 0.8);
+
+  --radius: 14px;
+  --transition: 0.25s ease;
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+/* ===================================
+   THEME MAIN CONTAINER
+   =================================== */
+.app-container.dark {
+  background: #0b0f19;
+  color: #e6ecf5;
+}
+
+.app-container.light {
+  background: #f5f6fa;
+  color: #1a1a1a;
+}
+
+/* Light Mode Overrides */
+.app-container.light .editor-panel-adv,
+.app-container.light .preview-adv,
+.app-container.light .console-panel,
+.app-container.light .topbar {
+  background: rgba(255, 255, 255, 0.65);
+  color: #1a1a1a;
+  border-color: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(18px);
+}
+
+/* Buttons Light Mode */
+.app-container.light .icon-btn,
+.app-container.light .pbtn,
+.app-container.light .top-btn,
+.app-container.light .tab-btn {
+  background: rgba(0, 0, 0, 0.06);
+  color: #1a1a1a;
+}
+
+.app-container.light .icon-btn:hover,
+.app-container.light .pbtn:hover,
+.app-container.light .top-btn:hover,
+.app-container.light .tab-btn:hover {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+/* Active tab light */
+.app-container.light .tab-btn.active {
+  background: #8c4bff;
+  color: white;
+}
+
+/* Textarea Light */
+.app-container.light .adv-textarea {
+  background: rgba(255, 255, 255, 0.55);
+  color: #000;
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+.app-container.light .adv-textarea:focus {
+  border-color: #8c4bff;
+}
+
+/* Console Light Mode */
+.app-container.light .console-output {
+  background: rgba(0, 0, 0, 0.08);
+  color: #000;
+}
+
+
+/* ======================
+   PANEL (Editors)
+   ====================== */
+.editor-panel-adv {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 100%;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Toolbar */
+.toolbar-adv {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.icon-btn {
+  background: var(--glass-light);
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.icon-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.icon-btn input {
+  margin-right: 6px;
+}
+
+/* ======================
+   FILE TABS
+   ====================== */
+.tabs-adv {
+  display: flex;
+  gap: 8px;
+}
+
+.tab-btn {
+  padding: 7px 14px;
+  border-radius: var(--radius);
+  background: var(--glass-light);
+  border: 1px solid transparent;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.tab-btn:hover {
+  background: var(--glass-border);
+  color: var(--text-light);
+}
+
+.tab-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+  box-shadow: var(--accent-glow);
+  font-weight: 600;
+}
+
+/* ======================
+   TEXT EDITOR AREA
+   ====================== */
+.editor-wrapper {
+  flex: 1;
+  display: flex;
+  height: 100%;
+}
+
+.adv-textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-light);
+  padding: 16px;
+  border-radius: var(--radius);
+  font-family: "Fira Code", monospace;
+  font-size: 15px;
+  resize: none;
+  outline: none;
+  height: 100%;
+  line-height: 1.5;
+  transition: var(--transition);
+}
+
+.adv-textarea:focus {
+  border-color: var(--accent);
+  background: rgba(0, 0, 0, 0.55);
+  box-shadow: var(--accent-glow);
+}
+
+/* ======================
+   PREVIEW CONTAINER
+   ====================== */
+.preview-adv {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 100%;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+/* Toolbar */
+.preview-toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.pbtn {
+  background: var(--glass-light);
+  padding: 7px 10px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: var(--transition);
+  color: var(--text-light);
+}
+
+.pbtn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: var(--accent-glow);
+}
+
+/* Device Buttons */
+.device-btns {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.dBtn {
+  background: var(--glass-light);
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--text-muted);
+}
+
+.dBtn:hover {
+  color: white;
+}
+
+.dBtn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+  box-shadow: var(--accent-glow);
+}
+
+/* FRAME */
+.frame-container {
+  background: white;
+  border-radius: var(--radius);
+  flex: 1;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.09);
+  margin: 0 auto;
+  transition: var(--transition);
+  box-shadow: 0 0 25px rgba(0,0,0,0.25);
+}
+
+.frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ======================
+   TOPBAR + LAYOUT
+   ====================== */
+.topbar {
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  background: var(--glass);
+  border-bottom: 1px solid var(--glass-border);
+  backdrop-filter: blur(18px);
+  justify-content: space-between;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.top-btn {
+  padding: 8px 14px;
+  background: var(--glass-light);
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  color: var(--text-light);
+  transition: var(--transition);
+}
+
+.top-btn:hover {
+  background: var(--accent);
+  box-shadow: var(--accent-glow);
+}
+
+/* Main layout */
+.layout {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 14px;
+  padding: 14px;
+  height: calc(100vh - 220px);
+}
+
+/* ======================
+   BOTTOM CONSOLE 
+   ====================== */
+.console-panel {
+  background: var(--glass);
+  border-top: 1px solid var(--glass-border);
+  padding: 12px;
+  height: 200px;
+  backdrop-filter: blur(18px);
+}
+
+.console-output {
+  background: rgba(0,0,0,0.45);
+  padding: 10px;
+  border-radius: var(--radius);
+  height: 150px;
+  overflow-y: auto;
+  font-family: "Fira Code", monospace;
+  box-shadow: inset 0 0 12px rgba(0,0,0,0.5);
+}
+
+.empty-console {
+  opacity: 0.5;
+  font-style: italic;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
